@@ -177,12 +177,16 @@
             // 
             // button1
             // 
+            button1.BackColor = Color.FromArgb(34, 58, 162);
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.Font = new Font("Microsoft Sans Serif", 9F);
+            button1.ForeColor = SystemColors.ButtonFace;
             button1.Location = new Point(113, 447);
             button1.Name = "button1";
             button1.Size = new Size(112, 34);
             button1.TabIndex = 15;
             button1.Text = "Submit";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // textBox4
@@ -220,7 +224,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(22, 67, 108);
+            panel2.BackColor = Color.FromArgb(6, 15, 45);
             panel2.Controls.Add(checkBox1);
             panel2.Controls.Add(textBox1);
             panel2.Controls.Add(button1);
@@ -239,14 +243,15 @@
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label7);
-            panel2.Location = new Point(-1, -3);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(846, 496);
+            panel2.Size = new Size(835, 493);
             panel2.TabIndex = 20;
             // 
             // button3
             // 
-            button3.Location = new Point(280, 447);
+            button3.Location = new Point(268, 447);
             button3.Name = "button3";
             button3.Size = new Size(111, 34);
             button3.TabIndex = 16;
@@ -261,6 +266,7 @@
             ClientSize = new Size(835, 493);
             Controls.Add(panel2);
             Name = "Form2";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Registration";
             Load += Form2_Load;
             panel2.ResumeLayout(false);

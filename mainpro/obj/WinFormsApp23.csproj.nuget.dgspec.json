@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\college\\Anish\\cims\\mainpro\\WinFormsApp23.csproj": {}
+    "C:\\Users\\97798\\OneDrive\\Desktop\\project3rdwindowapp\\mainpro\\WinFormsApp23.csproj": {}
   },
   "projects": {
-    "E:\\college\\Anish\\cims\\mainpro\\WinFormsApp23.csproj": {
+    "C:\\Users\\97798\\OneDrive\\Desktop\\project3rdwindowapp\\mainpro\\WinFormsApp23.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\college\\Anish\\cims\\mainpro\\WinFormsApp23.csproj",
+        "projectUniqueName": "C:\\Users\\97798\\OneDrive\\Desktop\\project3rdwindowapp\\mainpro\\WinFormsApp23.csproj",
         "projectName": "WinFormsApp23",
-        "projectPath": "E:\\college\\Anish\\cims\\mainpro\\WinFormsApp23.csproj",
-        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "E:\\college\\Anish\\cims\\mainpro\\obj\\",
+        "projectPath": "C:\\Users\\97798\\OneDrive\\Desktop\\project3rdwindowapp\\mainpro\\WinFormsApp23.csproj",
+        "packagesPath": "C:\\Users\\97798\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\97798\\OneDrive\\Desktop\\project3rdwindowapp\\mainpro\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\97798\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -90,7 +90,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

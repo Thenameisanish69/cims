@@ -297,6 +297,7 @@
             Controls.Add(userControlBrand11);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "Home";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Computer Shop management system";
             Load += Home_Load;
             panel1.ResumeLayout(false);
