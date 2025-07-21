@@ -78,7 +78,7 @@ namespace WinFormsApp23
             {
                 if (cmbProduct == null) return;
 
-                
+
                 cmbProduct.Items.Clear();
                 cmbProduct.Items.Add("-----SELECT-----");
 
@@ -101,7 +101,7 @@ namespace WinFormsApp23
                         }
                     }
                 }
-             
+
                 cmbProduct.SelectedIndex = 0;
             }
             catch (Exception ex)
@@ -143,10 +143,16 @@ namespace WinFormsApp23
         }
 
         private void btnAdd1_Click(object sender, EventArgs e)
-        { 
-            if(txtCustomerName == null || string.IsNullOrWhiteSpace(txtCustomerName.Text))
+        {
+            if (txtCustomerName == null || string.IsNullOrWhiteSpace(txtCustomerName.Text))
             {
                 MessageBox.Show("Please enter customer name.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtCustomerName.Text.Trim(), @"^[a-zA-Z\s]+$"))
+            {
+                MessageBox.Show("Customer name should contain only letters and spaces.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtCustomerName.Focus();
                 return;
             }
             if (MtbCustomerNumber == null || !MtbCustomerNumber.MaskFull)
@@ -806,10 +812,15 @@ namespace WinFormsApp23
         private void txtCustomerName1_TextChanged(object sender, EventArgs e)
         {
         }
-    
 
-  private void tpAddOrder_Click(object sender, EventArgs e)
+
+        private void tpAddOrder_Click(object sender, EventArgs e)
         {
+        }
+
+        private void txtCustomerName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -28,11 +28,23 @@ namespace WinFormsApp23
         {
             if (string.IsNullOrWhiteSpace(textBox1.Text) ||
                 string.IsNullOrWhiteSpace(textBox2.Text) ||
-                string.IsNullOrWhiteSpace(textBox4.Text) ||
+              
                 string.IsNullOrWhiteSpace(textBox5.Text) ||
                 string.IsNullOrWhiteSpace(textBox6.Text))
             {
                 MessageBox.Show("All fields are required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!System.Text.RegularExpressions.Regex.IsMatch(textBox1.Text.Trim(), @"^[a-zA-Z\s]+$"))
+            {
+                MessageBox.Show("Textbox should contain only letters and spaces.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox1.Focus();
+                return;
+            } 
+            if (!System.Text.RegularExpressions.Regex.IsMatch(textBox2.Text.Trim(), @"^[a-zA-Z\s]+$"))
+            {
+                MessageBox.Show("Textbox should contain only letters and spaces.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox2.Focus();
                 return;
             }
             string gender = "";
@@ -46,30 +58,22 @@ namespace WinFormsApp23
                 return;
             }
 
-            string ageText = textBox4.Text.Trim();
+          
 
-            if (string.IsNullOrWhiteSpace(ageText))
+              if (!System.Text.RegularExpressions.Regex.IsMatch(textBox5.Text.Trim(), @"^[a-zA-Z][a-zA-Z0-9_]{3,15}$"))
             {
-                MessageBox.Show("Please enter your age.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Username must start with a letter and be 4–16 characters long (letters, digits, underscore).", "Invalid Username", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox5.Focus();
                 return;
             }
-
-            bool isValidNumber = int.TryParse(ageText, out int age);
-
-            if (!isValidNumber || age < 0 || age > 50)
-            {
-                MessageBox.Show("Please enter a valid age between 0 and 120.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
             DateTime dob = dateTimePicker1.Value;
 
             string connectionString = "Data Source=ANISH7109\\SQLEXPRESS;Initial Catalog=MyDB;Integrated Security=True;Encrypt=False";
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                string query = "INSERT INTO users (Firstname, Lastname, username, password, [Date of birth], Age, Gender) " +
-                               "VALUES (@Firstname, @Lastname, @Username, @Password, @DOB, @Age, @Gender)";
+                string query = "INSERT INTO users (Firstname, Lastname, username, password, [Date of birth], Gender) " +
+                               "VALUES (@Firstname, @Lastname, @Username, @Password, @DOB, @Gender)";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
@@ -78,7 +82,7 @@ namespace WinFormsApp23
                     cmd.Parameters.AddWithValue("@Username", textBox5.Text.Trim());
                     cmd.Parameters.AddWithValue("@Password", textBox6.Text.Trim());
                     cmd.Parameters.AddWithValue("@DOB", dob);
-                    cmd.Parameters.AddWithValue("@Age", age);
+                  
                     cmd.Parameters.AddWithValue("@Gender", gender);
 
                     con.Open();
@@ -110,8 +114,13 @@ namespace WinFormsApp23
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             textBox6.UseSystemPasswordChar = !checkBox1.Checked;
-        
-    }
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

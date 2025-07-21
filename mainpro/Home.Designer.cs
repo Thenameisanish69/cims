@@ -178,9 +178,9 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(43, 119);
             label1.Name = "label1";
-            label1.Size = new Size(217, 38);
+            label1.Size = new Size(218, 38);
             label1.TabIndex = 0;
-            label1.Text = "Computer Shop";
+            label1.Text = "Computer Store";
             // 
             // pictureBox1
             // 

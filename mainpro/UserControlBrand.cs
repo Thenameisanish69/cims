@@ -167,6 +167,12 @@ namespace WinFormsApp23
                 MessageBox.Show("Please enter a product name", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            if (!System.Text.RegularExpressions.Regex.IsMatch(ProductName, @"^[a-zA-Z0-9\s\-]+$"))
+            {
+                MessageBox.Show("Product name can only contain letters, numbers, spaces, and dashes.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtProductName.Focus();
+                return;
+            }
             if (nudRate.Value <= 0)
             {
                 MessageBox.Show("Please enter a valid rate", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -31,7 +31,6 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            label4 = new Label();
             label5 = new Label();
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
@@ -42,7 +41,6 @@
             textBox5 = new TextBox();
             textBox6 = new TextBox();
             button1 = new Button();
-            textBox4 = new TextBox();
             dateTimePicker1 = new DateTimePicker();
             checkBox1 = new CheckBox();
             panel2 = new Panel();
@@ -80,16 +78,6 @@
             label3.TabIndex = 2;
             label3.Text = "Date of birth:";
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(79, 219);
-            label4.Name = "label4";
-            label4.Size = new Size(48, 25);
-            label4.TabIndex = 3;
-            label4.Text = "Age:";
-            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -104,7 +92,7 @@
             // 
             radioButton1.AutoSize = true;
             radioButton1.ForeColor = Color.White;
-            radioButton1.Location = new Point(178, 125);
+            radioButton1.Location = new Point(200, 125);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(75, 29);
             radioButton1.TabIndex = 5;
@@ -115,7 +103,7 @@
             // 
             radioButton2.AutoSize = true;
             radioButton2.ForeColor = Color.White;
-            radioButton2.Location = new Point(325, 125);
+            radioButton2.Location = new Point(343, 125);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(93, 29);
             radioButton2.TabIndex = 6;
@@ -126,7 +114,7 @@
             // 
             label6.AutoSize = true;
             label6.ForeColor = Color.White;
-            label6.Location = new Point(61, 275);
+            label6.Location = new Point(65, 213);
             label6.Name = "label6";
             label6.Size = new Size(95, 25);
             label6.TabIndex = 7;
@@ -136,7 +124,7 @@
             // 
             label7.AutoSize = true;
             label7.ForeColor = Color.White;
-            label7.Location = new Point(65, 326);
+            label7.Location = new Point(65, 280);
             label7.Name = "label7";
             label7.Size = new Size(91, 25);
             label7.TabIndex = 8;
@@ -149,6 +137,7 @@
             textBox1.PlaceholderText = "Enter firstname";
             textBox1.Size = new Size(281, 31);
             textBox1.TabIndex = 9;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // textBox2
             // 
@@ -160,18 +149,18 @@
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(200, 272);
+            textBox5.Location = new Point(200, 213);
             textBox5.Name = "textBox5";
             textBox5.PlaceholderText = "Enter username";
-            textBox5.Size = new Size(281, 31);
+            textBox5.Size = new Size(300, 31);
             textBox5.TabIndex = 13;
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(200, 326);
+            textBox6.Location = new Point(200, 277);
             textBox6.Name = "textBox6";
             textBox6.PlaceholderText = "Enter password";
-            textBox6.Size = new Size(281, 31);
+            textBox6.Size = new Size(300, 31);
             textBox6.TabIndex = 14;
             textBox6.UseSystemPasswordChar = true;
             // 
@@ -189,15 +178,6 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(200, 216);
-            textBox4.Name = "textBox4";
-            textBox4.PlaceholderText = "Enter your age";
-            textBox4.Size = new Size(281, 31);
-            textBox4.TabIndex = 17;
-            textBox4.TextChanged += textBox4_TextChanged;
-            // 
             // dateTimePicker1
             // 
             dateTimePicker1.Format = DateTimePickerFormat.Short;
@@ -214,7 +194,7 @@
             // 
             checkBox1.AutoSize = true;
             checkBox1.ForeColor = Color.White;
-            checkBox1.Location = new Point(188, 384);
+            checkBox1.Location = new Point(188, 346);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(164, 29);
             checkBox1.TabIndex = 19;
@@ -231,7 +211,6 @@
             panel2.Controls.Add(textBox6);
             panel2.Controls.Add(button3);
             panel2.Controls.Add(textBox5);
-            panel2.Controls.Add(textBox4);
             panel2.Controls.Add(dateTimePicker1);
             panel2.Controls.Add(textBox2);
             panel2.Controls.Add(label3);
@@ -240,7 +219,6 @@
             panel2.Controls.Add(label5);
             panel2.Controls.Add(radioButton1);
             panel2.Controls.Add(radioButton2);
-            panel2.Controls.Add(label4);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label7);
             panel2.Dock = DockStyle.Fill;
@@ -279,7 +257,6 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private Label label4;
         private Label label5;
         private RadioButton radioButton1;
         private RadioButton radioButton2;
@@ -290,7 +267,6 @@
         private TextBox textBox5;
         private TextBox textBox6;
         private Button button1;
-        private TextBox textBox4;
         private DateTimePicker dateTimePicker1;
         private CheckBox checkBox1;
         private Panel panel2;
