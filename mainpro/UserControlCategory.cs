@@ -24,14 +24,25 @@ namespace WinFormsApp23
         public void EmptyBox()
         {
             txtCategoryName.Clear();
-            cmbStatus.SelectedIndex = 0;
-          
-        }
 
+            
+            if (!cmbStatus.Items.Contains("------Select--------"))
+            {
+                cmbStatus.Items.Insert(0, "------Select-------");
+            }
+
+            cmbStatus.SelectedIndex = 0;
+        }
         private void EmptyBox1()
         {
             txtCategoryName1.Clear();
+            if (!cmbStatus1.Items.Contains("---Select---------"))
+            {
+                cmbStatus1.Items.Insert(0, "-----Select-----------");
+            }
+
             cmbStatus1.SelectedIndex = 0;
+
             id = "";
         }
 

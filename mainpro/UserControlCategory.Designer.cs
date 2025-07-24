@@ -120,7 +120,7 @@
             cmbStatus.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbStatus.FlatStyle = FlatStyle.Flat;
             cmbStatus.FormattingEnabled = true;
-            cmbStatus.Items.AddRange(new object[] { "", "Available", "Unavailable" });
+            cmbStatus.Items.AddRange(new object[] { "Available", "Unavailable" });
             cmbStatus.Location = new Point(431, 190);
             cmbStatus.Name = "cmbStatus";
             cmbStatus.Size = new Size(321, 33);
@@ -392,7 +392,7 @@
             cmbStatus1.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbStatus1.FlatStyle = FlatStyle.Flat;
             cmbStatus1.FormattingEnabled = true;
-            cmbStatus1.Items.AddRange(new object[] { "", "Available", "Unavailable" });
+            cmbStatus1.Items.AddRange(new object[] { "Available", "Unavailable" });
             cmbStatus1.Location = new Point(368, 154);
             cmbStatus1.Name = "cmbStatus1";
             cmbStatus1.Size = new Size(321, 33);

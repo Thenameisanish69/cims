@@ -2,7 +2,8 @@
 using System.Data;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
-
+using System.Drawing.Printing;
+using System.Drawing;
 namespace WinFormsApp23
 {
     public partial class UserControlOrder : UserControl
@@ -56,6 +57,7 @@ namespace WinFormsApp23
             public int Id { get; }
             public string Name { get; }
             public decimal Rate { get; }
+            public static decimal nudQuantity { get; }
 
             public ProductItem(int id, string name, decimal rate)
             {
@@ -71,6 +73,28 @@ namespace WinFormsApp23
         {
             LoadAvailableProducts();
         }
+        private int GetAvailableStock(int productId)
+        {
+            int stock = 0;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT quantity FROM Product WHERE Product_Id = @Product_Id";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Product_Id", productId);
+                    connection.Open();
+
+                    object result = command.ExecuteScalar();
+                    if (result != null && int.TryParse(result.ToString(), out int s))
+                    {
+                        stock = s;
+                    }
+                }
+            }
+
+            return stock;
+        }
 
         private void LoadAvailableProducts()
         {
@@ -80,7 +104,7 @@ namespace WinFormsApp23
 
 
                 cmbProduct.Items.Clear();
-                cmbProduct.Items.Add("-----SELECT-----");
+                cmbProduct.Items.Add("-----Select-----");
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -166,17 +190,34 @@ namespace WinFormsApp23
                 return;
             }
 
-            if (nudQuantity.Value <= 0)
+            if (nudQuantity.Value <= 0||nudQuantity.Value>=101)
             {
                 MessageBox.Show("Please enter a valid quantity.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                nudQuantity.Value = 0;
                 return;
             }
-
+           
+            
             if (cmbProduct.SelectedItem is not ProductItem product)
             {
                 return;
             }
-
+            int availableStock = GetAvailableStock(product.Id);
+            int existingQty = 0;
+            foreach (DataGridViewRow row in dgvProductList.Rows)
+            {
+                if (row.Cells["Product_Id"].Value?.ToString() == product.Id.ToString())
+                {
+                    existingQty = int.TryParse(row.Cells["Quantity"].Value?.ToString(), out int q) ? q : 0;
+                    break;
+                }
+            }
+            int totalRequestedQty = existingQty + (int)nudQuantity.Value;
+            if (totalRequestedQty > availableStock)
+            {
+                MessageBox.Show("Insufficient stock", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             decimal lineTotal = product.Rate * nudQuantity.Value;
 
             foreach (DataGridViewRow row in dgvProductList.Rows)
@@ -808,6 +849,37 @@ namespace WinFormsApp23
             UpdateOrder();
             EmptyBox1();
         }
+        RichTextBox richTextBox1 = new RichTextBox();
+
+        private void Receipt()
+        {
+            richTextBox1.Clear();
+            richTextBox1.AppendText("Order Receipt\n");
+            richTextBox1.AppendText("========================================\n");
+            richTextBox1.AppendText($"Order Date: {dptDate.Value.ToShortDateString()}\n");
+            richTextBox1.AppendText($"Customer Name: {txtCustomerName.Text}\n");
+            richTextBox1.AppendText($"Customer Number: {MtbCustomerNumber.Text}\n");
+            richTextBox1.AppendText("Products:\n");
+
+            foreach (DataGridViewRow row in dgvProductList.Rows)
+            {
+                if (row.Cells["ProductName"].Value != null && row.Cells["Rate"].Value != null && row.Cells["Quantity"].Value != null)
+                {
+                    richTextBox1.AppendText($"{row.Cells["ProductName"].Value} - Rate: {row.Cells["Rate"].Value}, Quantity: {row.Cells["Quantity"].Value}, Total: {row.Cells["Total"].Value}\n");
+                }
+            }
+
+            richTextBox1.AppendText("========================================\n");
+            richTextBox1.AppendText($"Total Amount: {txtTotalAmount.Text}\n");
+            richTextBox1.AppendText($"Paid Amount: {nudPaidAmount.Value}\n");
+            richTextBox1.AppendText($"Due Amount: {txtDueAmount.Text}\n");
+            richTextBox1.AppendText($"Discount: {nudDiscount.Value}\n");
+            richTextBox1.AppendText($"Grand Total: {txtGrandTotal.Text}\n");
+            richTextBox1.AppendText($"Payment Status: {cmbPaymentstatus.SelectedItem}\n");
+            richTextBox1.AppendText("========================================\n");
+            richTextBox1.AppendText("Thank you for your order!\n");
+        }
+
 
         private void txtCustomerName1_TextChanged(object sender, EventArgs e)
         {
@@ -822,7 +894,31 @@ namespace WinFormsApp23
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Receipt();
+            printDocument = new PrintDocument();
+            printDocument.PrintPage += printDocument_PrintPage;
+            printDocument.PrintPage += printDocument_PrintPage; 
+            printPreviewDialog.Document = printDocument!;
+            printPreviewDialog.Width = 800;
+            printPreviewDialog.Height = 600;
+            printPreviewDialog.ShowDialog();
+        }
+
+
+        private void printDocument_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            e.Graphics!.DrawString(
+   richTextBox1.Text,
+   new Font("Arial", 10),
+   Brushes.Black,
+   new RectangleF(50, 50, e.MarginBounds.Width, e.MarginBounds.Height)
+);
+        }
     }
 }
+
 
 #endregion

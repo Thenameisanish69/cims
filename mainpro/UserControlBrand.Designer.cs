@@ -34,7 +34,7 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             tcProduct = new TabControl();
             tpAddProduct = new TabPage();
-            button1 = new Button();
+            panel1 = new Panel();
             nudQuantity = new NumericUpDown();
             cmbstatus = new ComboBox();
             label7 = new Label();
@@ -45,6 +45,7 @@
             label3 = new Label();
             txtProductName = new TextBox();
             label2 = new Label();
+            button1 = new Button();
             label1 = new Label();
             tpManageProduct = new TabPage();
             picSearch = new PictureBox();
@@ -61,10 +62,9 @@
             Column5 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
             tpOptions = new TabPage();
+            panel2 = new Panel();
             nudQunatity2 = new NumericUpDown();
             label15 = new Label();
-            btnRemove = new Button();
-            btnChange = new Button();
             cmbStatus2 = new ComboBox();
             label10 = new Label();
             cmbCategory2 = new ComboBox();
@@ -73,26 +73,26 @@
             label12 = new Label();
             txtProductName1 = new TextBox();
             label13 = new Label();
+            btnRemove = new Button();
+            btnChange = new Button();
             label14 = new Label();
             pageSetupDialog1 = new PageSetupDialog();
             guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             toolTip1 = new ToolTip(components);
             guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(components);
-            panel1 = new Panel();
-            panel2 = new Panel();
             tcProduct.SuspendLayout();
             tpAddProduct.SuspendLayout();
+            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudQuantity).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudRate).BeginInit();
             tpManageProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picSearch).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvProduct).BeginInit();
             tpOptions.SuspendLayout();
+            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudQunatity2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudRate1).BeginInit();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // tcProduct
@@ -122,28 +122,32 @@
             tpAddProduct.UseVisualStyleBackColor = true;
             tpAddProduct.Click += tpAddProduct_Click;
             // 
-            // button1
+            // panel1
             // 
-            button1.Anchor = AnchorStyles.None;
-            button1.BackColor = Color.FromArgb(22, 67, 108);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(90, 569);
-            button1.Name = "button1";
-            button1.Size = new Size(157, 54);
-            button1.TabIndex = 15;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            panel1.Controls.Add(nudQuantity);
+            panel1.Controls.Add(cmbstatus);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(cmbCategory);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(nudRate);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(txtProductName);
+            panel1.Controls.Add(label2);
+            panel1.Location = new Point(48, 33);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(685, 361);
+            panel1.TabIndex = 16;
             // 
             // nudQuantity
             // 
             nudQuantity.Anchor = AnchorStyles.None;
             nudQuantity.Location = new Point(181, 108);
-            nudQuantity.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            nudQuantity.Maximum = new decimal(new int[] { 101, 0, 0, 0 });
             nudQuantity.Name = "nudQuantity";
             nudQuantity.Size = new Size(176, 31);
             nudQuantity.TabIndex = 6;
+            nudQuantity.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // cmbstatus
             // 
@@ -202,10 +206,11 @@
             // 
             nudRate.Anchor = AnchorStyles.None;
             nudRate.Location = new Point(181, 56);
-            nudRate.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            nudRate.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
             nudRate.Name = "nudRate";
             nudRate.Size = new Size(176, 31);
             nudRate.TabIndex = 4;
+            nudRate.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // label3
             // 
@@ -237,6 +242,20 @@
             label2.Size = new Size(136, 25);
             label2.TabIndex = 1;
             label2.Text = "Product Name:";
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.None;
+            button1.BackColor = Color.FromArgb(22, 67, 108);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(90, 569);
+            button1.Name = "button1";
+            button1.Size = new Size(157, 54);
+            button1.TabIndex = 15;
+            button1.Text = "Add";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label1
             // 
@@ -444,11 +463,28 @@
             tpOptions.Text = "Options";
             tpOptions.UseVisualStyleBackColor = true;
             // 
+            // panel2
+            // 
+            panel2.Controls.Add(nudQunatity2);
+            panel2.Controls.Add(label15);
+            panel2.Controls.Add(cmbStatus2);
+            panel2.Controls.Add(label10);
+            panel2.Controls.Add(cmbCategory2);
+            panel2.Controls.Add(label11);
+            panel2.Controls.Add(nudRate1);
+            panel2.Controls.Add(label12);
+            panel2.Controls.Add(txtProductName1);
+            panel2.Controls.Add(label13);
+            panel2.Location = new Point(122, 26);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(719, 357);
+            panel2.TabIndex = 29;
+            // 
             // nudQunatity2
             // 
             nudQunatity2.Anchor = AnchorStyles.None;
             nudQunatity2.Location = new Point(153, 106);
-            nudQunatity2.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            nudQunatity2.Maximum = new decimal(new int[] { 101, 0, 0, 0 });
             nudQunatity2.Name = "nudQunatity2";
             nudQunatity2.Size = new Size(276, 31);
             nudQunatity2.TabIndex = 28;
@@ -463,34 +499,6 @@
             label15.Size = new Size(80, 25);
             label15.TabIndex = 27;
             label15.Text = "Quntity:";
-            // 
-            // btnRemove
-            // 
-            btnRemove.Anchor = AnchorStyles.None;
-            btnRemove.BackColor = Color.FromArgb(57, 151, 196);
-            btnRemove.FlatStyle = FlatStyle.Flat;
-            btnRemove.ForeColor = Color.White;
-            btnRemove.Location = new Point(331, 546);
-            btnRemove.Name = "btnRemove";
-            btnRemove.Size = new Size(128, 63);
-            btnRemove.TabIndex = 26;
-            btnRemove.Text = "Remove";
-            btnRemove.UseVisualStyleBackColor = false;
-            btnRemove.Click += btnRemove_Click_2;
-            // 
-            // btnChange
-            // 
-            btnChange.Anchor = AnchorStyles.None;
-            btnChange.BackColor = Color.FromArgb(22, 67, 108);
-            btnChange.FlatAppearance.BorderSize = 0;
-            btnChange.ForeColor = Color.White;
-            btnChange.Location = new Point(138, 546);
-            btnChange.Name = "btnChange";
-            btnChange.Size = new Size(128, 63);
-            btnChange.TabIndex = 25;
-            btnChange.Text = "Change";
-            btnChange.UseVisualStyleBackColor = false;
-            btnChange.Click += btnChange_Click_1;
             // 
             // cmbStatus2
             // 
@@ -537,7 +545,7 @@
             // 
             nudRate1.Anchor = AnchorStyles.None;
             nudRate1.Location = new Point(153, 63);
-            nudRate1.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            nudRate1.Maximum = new decimal(new int[] { 1000001, 0, 0, 0 });
             nudRate1.Name = "nudRate1";
             nudRate1.Size = new Size(291, 31);
             nudRate1.TabIndex = 20;
@@ -573,6 +581,34 @@
             label13.TabIndex = 17;
             label13.Text = "Product Name:";
             // 
+            // btnRemove
+            // 
+            btnRemove.Anchor = AnchorStyles.None;
+            btnRemove.BackColor = Color.FromArgb(57, 151, 196);
+            btnRemove.FlatStyle = FlatStyle.Flat;
+            btnRemove.ForeColor = Color.White;
+            btnRemove.Location = new Point(331, 546);
+            btnRemove.Name = "btnRemove";
+            btnRemove.Size = new Size(128, 63);
+            btnRemove.TabIndex = 26;
+            btnRemove.Text = "Remove";
+            btnRemove.UseVisualStyleBackColor = false;
+            btnRemove.Click += btnRemove_Click_2;
+            // 
+            // btnChange
+            // 
+            btnChange.Anchor = AnchorStyles.None;
+            btnChange.BackColor = Color.FromArgb(22, 67, 108);
+            btnChange.FlatAppearance.BorderSize = 0;
+            btnChange.ForeColor = Color.White;
+            btnChange.Location = new Point(138, 546);
+            btnChange.Name = "btnChange";
+            btnChange.Size = new Size(128, 63);
+            btnChange.TabIndex = 25;
+            btnChange.Text = "Change";
+            btnChange.UseVisualStyleBackColor = false;
+            btnChange.Click += btnChange_Click_1;
+            // 
             // label14
             // 
             label14.AutoSize = true;
@@ -596,40 +632,6 @@
             // 
             guna2Elipse3.TargetControl = btnRemove;
             // 
-            // panel1
-            // 
-            panel1.Controls.Add(nudQuantity);
-            panel1.Controls.Add(cmbstatus);
-            panel1.Controls.Add(label7);
-            panel1.Controls.Add(cmbCategory);
-            panel1.Controls.Add(label6);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(nudRate);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(txtProductName);
-            panel1.Controls.Add(label2);
-            panel1.Location = new Point(48, 33);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(685, 361);
-            panel1.TabIndex = 16;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(nudQunatity2);
-            panel2.Controls.Add(label15);
-            panel2.Controls.Add(cmbStatus2);
-            panel2.Controls.Add(label10);
-            panel2.Controls.Add(cmbCategory2);
-            panel2.Controls.Add(label11);
-            panel2.Controls.Add(nudRate1);
-            panel2.Controls.Add(label12);
-            panel2.Controls.Add(txtProductName1);
-            panel2.Controls.Add(label13);
-            panel2.Location = new Point(122, 26);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(719, 357);
-            panel2.TabIndex = 29;
-            // 
             // userControlBrand1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -642,6 +644,8 @@
             tcProduct.ResumeLayout(false);
             tpAddProduct.ResumeLayout(false);
             tpAddProduct.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nudQuantity).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudRate).EndInit();
             tpManageProduct.ResumeLayout(false);
@@ -650,12 +654,10 @@
             ((System.ComponentModel.ISupportInitialize)dgvProduct).EndInit();
             tpOptions.ResumeLayout(false);
             tpOptions.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)nudQunatity2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nudRate1).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nudQunatity2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudRate1).EndInit();
             ResumeLayout(false);
         }
 

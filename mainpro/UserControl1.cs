@@ -23,9 +23,9 @@ namespace WinFormsApp23
         {
             try
             {
-                lbltotalproduct.Text = GetCount("SELECT COUNT(*) FROM Product").ToString();
+                lbltotalproduct.Text = GetCount("SELECT COUNT(*) FROM Product WHERE status='Available'").ToString();
                 lbltotalorder.Text = GetCount("SELECT COUNT(*) FROM Orders").ToString();
-                lbllowstock.Text = GetCount("SELECT COUNT(*) FROM Product WHERE Status = 'Not available'").ToString();
+                lbllowstock.Text = GetCount("SELECT COUNT(*) FROM Product WHERE status = 'Unavailable'").ToString();
                 lbltotalrevenue.Text = GetSum("SELECT SUM(Grand_Total) FROM Orders WHERE Payment_status='Paid'").ToString("F2");
             }
             catch (Exception ex)

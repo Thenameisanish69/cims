@@ -16,6 +16,7 @@ namespace WinFormsApp23
             this.Load += new EventHandler(UserControlBrand_Load);
             tcProduct.SelectedIndexChanged += TcProduct_SelectedIndexChanged;
             tpAddProduct.Enter += TpAddProduct_Enter; 
+
         }
 
         private void TpAddProduct_Enter(object? sender, EventArgs e)
@@ -173,14 +174,16 @@ namespace WinFormsApp23
                 txtProductName.Focus();
                 return;
             }
-            if (nudRate.Value <= 0)
+            if (nudRate.Value <= 0||nudRate.Value>=100001)
             {
                 MessageBox.Show("Please enter a valid rate", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                nudRate.Value = 0;
                 return;
             }
-            if (nudQuantity.Value <= 0)
+            if (nudQuantity.Value <= 0||nudQuantity.Value>=101)
             {
                 MessageBox.Show("Please enter a valid quantity", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                nudQuantity.Value = 0;
                 return;
             }
             if (cmbCategory == null || cmbCategory.SelectedIndex == 0 || cmbCategory.SelectedItem == null)
@@ -299,9 +302,22 @@ namespace WinFormsApp23
 
                 connection.Open();
                 command.ExecuteNonQuery();
-
-                MessageBox.Show("Product updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                if (nudQunatity2.Value <= 0 || nudQunatity2.Value >= 101)
+                {
+                    MessageBox.Show("Please enter a valid quantity", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    nudQunatity2.Value = 0;
+                    return;
+                }
+                if (nudRate1.Value <= 0 || nudRate1.Value >= 1000001)
+                {
+                    MessageBox.Show("Please enter a valid rate", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    nudRate1.Value = 0;
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Product updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 LoadProducts();
                 LoadCategories(); 
                 EmptyBox1();

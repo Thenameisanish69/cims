@@ -36,6 +36,7 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             tcOrder = new TabControl();
             tpAddOrder = new TabPage();
+            button1 = new Button();
             btnAdd1 = new Button();
             label16 = new Label();
             label15 = new Label();
@@ -152,6 +153,7 @@
             // 
             // tpAddOrder
             // 
+            tpAddOrder.Controls.Add(button1);
             tpAddOrder.Controls.Add(btnAdd1);
             tpAddOrder.Controls.Add(label16);
             tpAddOrder.Controls.Add(label15);
@@ -194,6 +196,20 @@
             tpAddOrder.UseVisualStyleBackColor = true;
             tpAddOrder.Click += tpAddOrder_Click;
             tpAddOrder.Enter += tpAddOrder_Enter;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.None;
+            button1.BackColor = Color.FromArgb(22, 67, 108);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(1005, 671);
+            button1.Name = "button1";
+            button1.Size = new Size(157, 54);
+            button1.TabIndex = 43;
+            button1.Text = "Receipt";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // btnAdd1
             // 
@@ -524,10 +540,11 @@
             // 
             nudQuantity.Anchor = AnchorStyles.None;
             nudQuantity.Location = new Point(798, 174);
-            nudQuantity.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            nudQuantity.Maximum = new decimal(new int[] { 101, 0, 0, 0 });
             nudQuantity.Name = "nudQuantity";
             nudQuantity.Size = new Size(137, 31);
             nudQuantity.TabIndex = 18;
+            nudQuantity.Value = new decimal(new int[] { 1, 0, 0, 0 });
             nudQuantity.ValueChanged += nudQuantity_ValueChanged;
             // 
             // label7
@@ -1019,6 +1036,8 @@
             dptDate1.Anchor = AnchorStyles.None;
             dptDate1.Format = DateTimePickerFormat.Short;
             dptDate1.Location = new Point(43, 152);
+            dptDate1.MaxDate = new DateTime(2025, 12, 31, 0, 0, 0, 0);
+            dptDate1.MinDate = new DateTime(2024, 12, 31, 0, 0, 0, 0);
             dptDate1.Name = "dptDate1";
             dptDate1.Size = new Size(291, 31);
             dptDate1.TabIndex = 10;
@@ -1139,6 +1158,10 @@
             // printDialog1
             // 
             printDialog1.UseEXDialog = true;
+            // 
+            // printDocument
+            // 
+            printDocument.PrintPage += printDocument_PrintPage;
             // 
             // printPreviewDialog
             // 
@@ -1268,5 +1291,6 @@
         private DataGridViewTextBoxColumn Column13;
         private DataGridViewTextBoxColumn Column14;
         private DataGridViewTextBoxColumn Column15;
+        private Button button1;
     }
 }
