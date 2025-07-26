@@ -54,9 +54,10 @@
             // 
             label1.AutoSize = true;
             label1.ForeColor = Color.White;
-            label1.Location = new Point(79, 36);
+            label1.Location = new Point(55, 22);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(93, 25);
+            label1.Size = new Size(62, 15);
             label1.TabIndex = 0;
             label1.Text = "Firstname:";
             // 
@@ -64,9 +65,10 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.White;
-            label2.Location = new Point(81, 82);
+            label2.Location = new Point(57, 49);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(91, 25);
+            label2.Size = new Size(61, 15);
             label2.TabIndex = 1;
             label2.Text = "Lastname:";
             // 
@@ -74,9 +76,10 @@
             // 
             label3.AutoSize = true;
             label3.ForeColor = Color.White;
-            label3.Location = new Point(65, 168);
+            label3.Location = new Point(46, 101);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(117, 25);
+            label3.Size = new Size(76, 15);
             label3.TabIndex = 2;
             label3.Text = "Date of birth:";
             // 
@@ -84,9 +87,10 @@
             // 
             label4.AutoSize = true;
             label4.ForeColor = Color.White;
-            label4.Location = new Point(79, 219);
+            label4.Location = new Point(55, 131);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(48, 25);
+            label4.Size = new Size(31, 15);
             label4.TabIndex = 3;
             label4.Text = "Age:";
             // 
@@ -94,9 +98,10 @@
             // 
             label5.AutoSize = true;
             label5.ForeColor = Color.White;
-            label5.Location = new Point(83, 127);
+            label5.Location = new Point(58, 76);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(73, 25);
+            label5.Size = new Size(48, 15);
             label5.TabIndex = 4;
             label5.Text = "Gender:";
             // 
@@ -104,9 +109,10 @@
             // 
             radioButton1.AutoSize = true;
             radioButton1.ForeColor = Color.White;
-            radioButton1.Location = new Point(178, 125);
+            radioButton1.Location = new Point(125, 75);
+            radioButton1.Margin = new Padding(2, 2, 2, 2);
             radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(75, 29);
+            radioButton1.Size = new Size(51, 19);
             radioButton1.TabIndex = 5;
             radioButton1.Text = "Male";
             radioButton1.UseVisualStyleBackColor = true;
@@ -115,9 +121,10 @@
             // 
             radioButton2.AutoSize = true;
             radioButton2.ForeColor = Color.White;
-            radioButton2.Location = new Point(325, 125);
+            radioButton2.Location = new Point(228, 75);
+            radioButton2.Margin = new Padding(2, 2, 2, 2);
             radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(93, 29);
+            radioButton2.Size = new Size(63, 19);
             radioButton2.TabIndex = 6;
             radioButton2.Text = "Female";
             radioButton2.UseVisualStyleBackColor = true;
@@ -126,9 +133,10 @@
             // 
             label6.AutoSize = true;
             label6.ForeColor = Color.White;
-            label6.Location = new Point(61, 275);
+            label6.Location = new Point(43, 165);
+            label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(95, 25);
+            label6.Size = new Size(63, 15);
             label6.TabIndex = 7;
             label6.Text = "Username:";
             // 
@@ -136,42 +144,47 @@
             // 
             label7.AutoSize = true;
             label7.ForeColor = Color.White;
-            label7.Location = new Point(65, 326);
+            label7.Location = new Point(46, 196);
+            label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(91, 25);
+            label7.Size = new Size(60, 15);
             label7.TabIndex = 8;
             label7.Text = "Password:";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(200, 33);
+            textBox1.Location = new Point(140, 20);
+            textBox1.Margin = new Padding(2, 2, 2, 2);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "Enter firstname";
-            textBox1.Size = new Size(281, 31);
+            textBox1.Size = new Size(198, 23);
             textBox1.TabIndex = 9;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(200, 82);
+            textBox2.Location = new Point(140, 49);
+            textBox2.Margin = new Padding(2, 2, 2, 2);
             textBox2.Name = "textBox2";
             textBox2.PlaceholderText = "Enter lastname";
-            textBox2.Size = new Size(281, 31);
+            textBox2.Size = new Size(198, 23);
             textBox2.TabIndex = 10;
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(200, 272);
+            textBox5.Location = new Point(140, 163);
+            textBox5.Margin = new Padding(2, 2, 2, 2);
             textBox5.Name = "textBox5";
             textBox5.PlaceholderText = "Enter username";
-            textBox5.Size = new Size(281, 31);
+            textBox5.Size = new Size(198, 23);
             textBox5.TabIndex = 13;
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(200, 326);
+            textBox6.Location = new Point(140, 196);
+            textBox6.Margin = new Padding(2, 2, 2, 2);
             textBox6.Name = "textBox6";
             textBox6.PlaceholderText = "Enter password";
-            textBox6.Size = new Size(281, 31);
+            textBox6.Size = new Size(198, 23);
             textBox6.TabIndex = 14;
             textBox6.UseSystemPasswordChar = true;
             // 
@@ -181,9 +194,10 @@
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Microsoft Sans Serif", 9F);
             button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(113, 447);
+            button1.Location = new Point(79, 268);
+            button1.Margin = new Padding(2, 2, 2, 2);
             button1.Name = "button1";
-            button1.Size = new Size(112, 34);
+            button1.Size = new Size(78, 20);
             button1.TabIndex = 15;
             button1.Text = "Submit";
             button1.UseVisualStyleBackColor = false;
@@ -191,21 +205,23 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(200, 216);
+            textBox4.Location = new Point(140, 130);
+            textBox4.Margin = new Padding(2, 2, 2, 2);
             textBox4.Name = "textBox4";
             textBox4.PlaceholderText = "Enter your age";
-            textBox4.Size = new Size(281, 31);
+            textBox4.Size = new Size(198, 23);
             textBox4.TabIndex = 17;
             textBox4.TextChanged += textBox4_TextChanged;
             // 
             // dateTimePicker1
             // 
             dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(200, 160);
+            dateTimePicker1.Location = new Point(140, 96);
+            dateTimePicker1.Margin = new Padding(2, 2, 2, 2);
             dateTimePicker1.MaxDate = new DateTime(2006, 12, 31, 0, 0, 0, 0);
             dateTimePicker1.MinDate = new DateTime(1990, 1, 1, 0, 0, 0, 0);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(300, 31);
+            dateTimePicker1.Size = new Size(211, 23);
             dateTimePicker1.TabIndex = 18;
             dateTimePicker1.Value = new DateTime(2006, 12, 31, 0, 0, 0, 0);
             dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
@@ -214,9 +230,10 @@
             // 
             checkBox1.AutoSize = true;
             checkBox1.ForeColor = Color.White;
-            checkBox1.Location = new Point(188, 384);
+            checkBox1.Location = new Point(132, 230);
+            checkBox1.Margin = new Padding(2, 2, 2, 2);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(164, 29);
+            checkBox1.Size = new Size(108, 19);
             checkBox1.TabIndex = 19;
             checkBox1.Text = "Show password";
             checkBox1.UseVisualStyleBackColor = true;
@@ -245,15 +262,17 @@
             panel2.Controls.Add(label7);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(2, 2, 2, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(835, 493);
+            panel2.Size = new Size(584, 365);
             panel2.TabIndex = 20;
             // 
             // button3
             // 
-            button3.Location = new Point(268, 447);
+            button3.Location = new Point(188, 268);
+            button3.Margin = new Padding(2, 2, 2, 2);
             button3.Name = "button3";
-            button3.Size = new Size(111, 34);
+            button3.Size = new Size(78, 20);
             button3.TabIndex = 16;
             button3.Text = "Cancel";
             button3.UseVisualStyleBackColor = true;
@@ -261,10 +280,11 @@
             // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(835, 493);
+            ClientSize = new Size(584, 365);
             Controls.Add(panel2);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "Form2";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Registration";

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             panel1 = new Panel();
             pnlMove = new Panel();
             button7 = new Button();
@@ -37,8 +36,6 @@
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
-            label2 = new Label();
-            label1 = new Label();
             pictureBox1 = new PictureBox();
             guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             panel2 = new Panel();
@@ -65,8 +62,6 @@
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
@@ -79,7 +74,7 @@
             // pnlMove
             // 
             pnlMove.BackColor = Color.White;
-            pnlMove.Location = new Point(30, 155);
+            pnlMove.Location = new Point(47, 190);
             pnlMove.Margin = new Padding(2);
             pnlMove.Name = "pnlMove";
             pnlMove.Size = new Size(7, 37);
@@ -91,14 +86,14 @@
             button7.FlatAppearance.BorderSize = 0;
             button7.FlatStyle = FlatStyle.Flat;
             button7.ForeColor = Color.White;
-            button7.Image = (Image)resources.GetObject("button7.Image");
+            button7.Image = Properties.Resources.logout;
             button7.ImageAlign = ContentAlignment.MiddleLeft;
-            button7.Location = new Point(41, 415);
+            button7.Location = new Point(58, 479);
             button7.Margin = new Padding(2);
             button7.Name = "button7";
             button7.Size = new Size(140, 23);
             button7.TabIndex = 0;
-            button7.Text = "          Logout";
+            button7.Text = "Logout";
             button7.UseVisualStyleBackColor = true;
             button7.Click += button7_Click_1;
             // 
@@ -109,7 +104,7 @@
             button5.ForeColor = Color.White;
             button5.Image = Properties.Resources.order1;
             button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(42, 329);
+            button5.Location = new Point(59, 361);
             button5.Margin = new Padding(2);
             button5.Name = "button5";
             button5.Size = new Size(113, 39);
@@ -126,7 +121,7 @@
             button3.ForeColor = Color.White;
             button3.Image = Properties.Resources.category1;
             button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(42, 208);
+            button3.Location = new Point(59, 245);
             button3.Margin = new Padding(2);
             button3.Name = "button3";
             button3.Size = new Size(113, 39);
@@ -142,7 +137,7 @@
             button2.ForeColor = Color.White;
             button2.Image = Properties.Resources.product1;
             button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(42, 268);
+            button2.Location = new Point(59, 303);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(113, 39);
@@ -158,7 +153,7 @@
             button1.ForeColor = Color.White;
             button1.Image = Properties.Resources.dashboard3;
             button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(41, 155);
+            button1.Location = new Point(58, 187);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(113, 39);
@@ -167,37 +162,14 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(21, 94);
-            label2.Margin = new Padding(2, 0, 2, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(192, 25);
-            label2.TabIndex = 0;
-            label2.Text = "Management system";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(44, 71);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(146, 25);
-            label1.TabIndex = 0;
-            label1.Text = "Computer Shop";
-            // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(65, 7);
+            pictureBox1.BackgroundImage = Properties.Resources.logo;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(67, 43);
             pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(105, 57);
+            pictureBox1.Size = new Size(100, 100);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -321,7 +293,6 @@
             Text = "Computer Shop management system";
             Load += Home_Load;
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -331,9 +302,7 @@
         #endregion
 
         private Panel panel1;
-        private Label label1;
         private PictureBox pictureBox1;
-        private Label label2;
         private Button button1;
         private Button button2;
         private Button button3;
